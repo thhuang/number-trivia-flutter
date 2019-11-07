@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 
 class NumberTrivia extends Equatable {
   final String text;
-  final int number;
+  final double number;
 
   NumberTrivia({
     @required this.text,
