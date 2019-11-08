@@ -19,8 +19,10 @@ void main() {
         () async {
       // arrange
       final Map<String, dynamic> jsonMap = jsonDecode(fixture('trivia.json'));
+
       // act
       final result = NumberTriviaModel.fromJson(jsonMap);
+
       // assert
       expect(result, tNumberTriviaModel);
     });
@@ -30,8 +32,10 @@ void main() {
       // arrange
       final Map<String, dynamic> jsonMap =
           jsonDecode(fixture('trivia_double.json'));
+
       // act
       final result = NumberTriviaModel.fromJson(jsonMap);
+
       // assert
       expect(result, tNumberTriviaModel);
     });
@@ -41,6 +45,7 @@ void main() {
     test('should return a JSON containing the proper data', () async {
       // act
       final result = tNumberTriviaModel.toJson();
+
       // assert
       final expectedMap = {
         'text': 'test',

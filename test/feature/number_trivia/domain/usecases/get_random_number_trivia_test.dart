@@ -27,7 +27,7 @@ void main() {
 
     // act
     final result = await usecase(NoParams());
-
+    
     // assert
     expect(result, Right(tNumberTrivia));
     verify(mockNumberTriviaRepository.getRandomNumberTrivia());
