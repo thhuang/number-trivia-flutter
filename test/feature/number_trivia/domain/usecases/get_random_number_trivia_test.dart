@@ -15,22 +15,25 @@ void main() {
 
   setUp(() {
     mockNumberTriviaRepository = MockNumberTriviaRepository();
-    usecase = GetRandomNumberTrivia(mockNumberTriviaRepository);
+    usecase = GetRandomNumberTrivia(repository: mockNumberTriviaRepository);
   });
 
   final tNumberTrivia = NumberTrivia(number: 1, text: 'test');
 
-  test('should get the trivia from the repository', () async {
-    // arrange
-    when(mockNumberTriviaRepository.getRandomNumberTrivia())
-    .thenAnswer((_) async => Right(tNumberTrivia));
+  test(
+    'should get the trivia from the repository',
+    () async {
+      // arrange
+      when(mockNumberTriviaRepository.getRandomNumberTrivia())
+          .thenAnswer((_) async => Right(tNumberTrivia));
 
-    // act
-    final result = await usecase(NoParams());
-    
-    // assert
-    expect(result, Right(tNumberTrivia));
-    verify(mockNumberTriviaRepository.getRandomNumberTrivia());
-    verifyNoMoreInteractions(mockNumberTriviaRepository);
-  });
+      // act
+      final result = await usecase(NoParams());
+
+      // assert
+      expect(result, Right(tNumberTrivia));
+      verify(mockNumberTriviaRepository.getRandomNumberTrivia());
+      verifyNoMoreInteractions(mockNumberTriviaRepository);
+    },
+  );
 }
