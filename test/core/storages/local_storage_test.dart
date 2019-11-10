@@ -35,4 +35,21 @@ void main() {
       },
     );
   });
+
+  group('setString', () {
+    test(
+      'should forward the call to SharedPreferences.setString',
+      () async {
+        // arrange
+        final tJsonString = jsonEncode(NumberTriviaModel(number: 1, text: 'test'));
+        when(mockSharedPreferences.setString(any, any));
+
+        // act
+        localStorage.setString(CACHED_NUMBER_TRIVIA, tJsonString);
+
+        // assert
+        verify(mockSharedPreferences.setString(CACHED_NUMBER_TRIVIA, tJsonString));
+      },
+    );
+  });
 }

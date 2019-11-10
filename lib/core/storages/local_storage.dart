@@ -16,8 +16,7 @@ class LocalStorageImpl implements LocalStorage {
   }
 
   @override
-  Future<void> setString(String key, String value) {
-    // TODO: implement setString
-    return null;
+  Future<void> setString(String key, String value) async {
+    await sharedPreferences.setString(key, value);
   }
 }
