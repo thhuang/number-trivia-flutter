@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:matcher/matcher.dart';
 import 'package:mockito/mockito.dart';
 import 'package:number_trivia/core/error/exceptions.dart';
 import 'package:number_trivia/core/storages/local_storage.dart';
@@ -50,12 +51,11 @@ void main() {
         // arrange
         when(mockLocalStorage.getString(any)).thenAnswer((_) async => null);
 
+        // act
+        final call = dataSource.getLastNumberTrivia;
+
         // assert
-        try {
-          await dataSource.getLastNumberTrivia();
-        } catch (e) {
-          expect(e, isInstanceOf<CacheException>());
-        }
+        expect(() => call(), throwsA(TypeMatcher<CacheException>()));
       },
     );
   });
