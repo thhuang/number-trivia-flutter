@@ -12,8 +12,7 @@ class LocalStorageImpl implements LocalStorage {
 
   @override
   Future<String> getString(String key) {
-    // TODO: implement getString
-    return null;
+    return Future.value(sharedPreferences.getString(key));
   }
 
   @override
