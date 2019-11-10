@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
+import 'package:meta/meta.dart';
 import 'package:number_trivia/core/error/exceptions.dart';
 import 'package:number_trivia/core/storages/local_storage.dart';
 import 'package:number_trivia/features/number_trivia/data/models/number_trivia_model.dart';

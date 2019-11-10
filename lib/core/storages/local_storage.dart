@@ -1,3 +1,4 @@
+import 'package:meta/meta.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class LocalStorage {
@@ -8,7 +9,7 @@ abstract class LocalStorage {
 class LocalStorageImpl implements LocalStorage {
   final SharedPreferences sharedPreferences;
 
-  LocalStorageImpl({this.sharedPreferences});
+  LocalStorageImpl({@required this.sharedPreferences});
 
   @override
   Future<String> getString(String key) {
