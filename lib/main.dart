@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(NumberTrivia());
+void main() => runApp(NumberTriviaApp());
 
-class NumberTrivia extends StatelessWidget {
-  const NumberTrivia({Key key}) : super(key: key);
+class NumberTriviaApp extends StatelessWidget {
+  const NumberTriviaApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
