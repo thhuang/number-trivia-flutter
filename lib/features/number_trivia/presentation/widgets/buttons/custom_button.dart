@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         height: 40.0,
-        width: 90.0,
+        width: 70.0,
       ),
       onPressed: onPressed,
     );

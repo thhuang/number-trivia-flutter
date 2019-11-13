@@ -19,6 +19,7 @@ class SearchButton extends StatelessWidget {
           final numberString = controller.value.text;
           numberTrivia.getConcreteNumberTrivia(numberString);
           controller.value.clear();
+          FocusScope.of(context).unfocus();
         },
       ),
     );

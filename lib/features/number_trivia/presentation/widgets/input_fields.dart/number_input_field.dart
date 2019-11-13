@@ -14,7 +14,7 @@ class NumberInputField extends StatelessWidget {
           Provider.of<ValueNotifier<TextEditingController>>(context).value,
       keyboardAppearance: Brightness.dark,
       keyboardType: TextInputType.number,
-      autofocus: true,
+      autofocus: false,
       textAlign: TextAlign.center,
       cursorColor: Theme.of(context).primaryColor,
       decoration: InputDecoration(

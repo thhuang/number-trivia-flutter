@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../logicholders/number_trivia_notifier.dart';
 import 'buttons/custom_button.dart';
+import 'buttons/lucky_button.dart';
 import 'buttons/search_button.dart';
 import 'input_fields.dart/number_input_field.dart';
 
@@ -25,13 +26,7 @@ class TriviaSearchPanel extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 SearchButton(),
-                CustomButton(
-                  text: 'Lucky',
-                  onPressed: () {
-                    Provider.of<NumberTriviaNotifier>(context)
-                        .getRandomNumberTrivia();
-                  },
-                ),
+                LuckyButton(),
               ],
             ),
           ),
