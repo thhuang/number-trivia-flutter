@@ -10,7 +10,7 @@ class LoadedDisplayPanel extends StatelessWidget {
     return Column(
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40.0),
+          padding: EdgeInsets.symmetric(horizontal: 50.0),
           child: AutoSizeText(
             Provider.of<NumberTriviaNotifier>(context)
                 .numberTrivia
@@ -22,9 +22,8 @@ class LoadedDisplayPanel extends StatelessWidget {
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 30.0),
+            padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 50.0),
             child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(horizontal: 40.0),
               child: Text(
                 Provider.of<NumberTriviaNotifier>(context).numberTrivia.text,
                 style: TextStyle(fontSize: 20.0),

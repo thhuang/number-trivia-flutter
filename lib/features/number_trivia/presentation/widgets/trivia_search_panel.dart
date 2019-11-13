@@ -19,18 +19,21 @@ class TriviaSearchPanel extends StatelessWidget {
           SizedBox(
             height: 10.0,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              SearchButton(),
-              CustomButton(
-                text: 'Lucky',
-                onPressed: () {
-                  Provider.of<NumberTriviaNotifier>(context)
-                      .getRandomNumberTrivia();
-                },
-              ),
-            ],
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 50.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                SearchButton(),
+                CustomButton(
+                  text: 'Lucky',
+                  onPressed: () {
+                    Provider.of<NumberTriviaNotifier>(context)
+                        .getRandomNumberTrivia();
+                  },
+                ),
+              ],
+            ),
           ),
         ],
       ),

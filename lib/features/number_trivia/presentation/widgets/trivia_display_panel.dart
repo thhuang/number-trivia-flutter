@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:number_trivia/features/number_trivia/presentation/widgets/state_display_panel.dart/empty_display_panel.dart';
+import 'package:number_trivia/features/number_trivia/presentation/widgets/state_display_panel.dart/error_display_panel.dart';
+import 'package:number_trivia/features/number_trivia/presentation/widgets/state_display_panel.dart/loading_display_panel.dart';
 import 'package:provider/provider.dart';
 
 import '../logicholders/number_trivia_notifier.dart';
@@ -15,11 +18,17 @@ class TriviaDisplayPanel extends StatelessWidget {
   }
 
   Widget widgetSwitch(NumberTriviaState numberTriviaState) {
-    // TODO: handle other states
-    if (numberTriviaState == Loaded()) {
+    final stateType = numberTriviaState.runtimeType;
+    if (stateType == Loaded) {
       return LoadedDisplayPanel();
+    } else if (stateType == Loading) {
+      return LoadingDisplayPanel();
+    } else if (stateType == Empty) {
+      return EmptyDisplayPanel();
+    } else if (stateType == Error) {
+      return ErrorDisplayPanel();
     } else {
-      return Container();
+      return Center(child: Text('Unexpected Error'));
     }
   }
 }
