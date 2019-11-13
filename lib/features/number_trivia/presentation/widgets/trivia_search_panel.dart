@@ -11,8 +11,8 @@ class TriviaSearchPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ValueNotifier<String>>(
-      builder: (_) => ValueNotifier<String>(''),
+    return ChangeNotifierProvider<ValueNotifier<TextEditingController>>(
+      builder: (_) => ValueNotifier<TextEditingController>(TextEditingController()),
       child: Column(
         children: <Widget>[
           NumberInputField(),

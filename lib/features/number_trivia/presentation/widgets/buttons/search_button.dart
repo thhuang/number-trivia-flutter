@@ -11,13 +11,16 @@ class SearchButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomButton(
-      text: 'Search',
-      onPressed: () {
-        final numberString = Provider.of<ValueNotifier<String>>(context).value;
-        Provider.of<NumberTriviaNotifier>(context)
-            .getConcreteNumberTrivia(numberString);
-      },
+    return Consumer2<ValueNotifier<TextEditingController>,
+        NumberTriviaNotifier>(
+      builder: (_, controller, numberTrivia, __) => CustomButton(
+        text: 'Search',
+        onPressed: () {
+          final numberString = controller.value.text;
+          numberTrivia.getConcreteNumberTrivia(numberString);
+          controller.value.clear();
+        },
+      ),
     );
   }
 }
