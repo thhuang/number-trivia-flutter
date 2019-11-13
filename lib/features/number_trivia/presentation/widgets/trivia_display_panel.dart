@@ -22,7 +22,6 @@ class TriviaDisplayPanel extends StatelessWidget {
 
     return Column(
       children: <Widget>[
-        SizedBox(height: 30.0),
         Text(
           triviaNumber,
           style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),

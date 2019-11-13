@@ -12,15 +12,17 @@ class NumberTriviaScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Number Trivia'),
       ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: TriviaDisplayPanel(),
-          ),
-          TriviaSearchPanel(),
-          SizedBox(height: 30.0),
-          // Expanded(flex: 4, child: Container()),
-        ],
+      body: Padding(
+        padding: EdgeInsets.symmetric(vertical: 30.0),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: TriviaDisplayPanel(),
+            ),
+            TriviaSearchPanel(),
+            // Expanded(flex: 4, child: Container()),
+          ],
+        ),
       ),
     );
   }
