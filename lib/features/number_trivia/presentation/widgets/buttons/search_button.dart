@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../logicholders/number_trivia_notifier.dart';
+import '../../logicholders/number_trivia_notifier.dart';
 import 'custom_button.dart';
 
 class SearchButton extends StatelessWidget {

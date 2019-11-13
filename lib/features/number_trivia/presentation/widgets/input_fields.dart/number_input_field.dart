@@ -23,6 +23,7 @@ class NumberInputField extends StatelessWidget {
         ),
         hintText: 'Enter a number!',
       ),
+      style: TextStyle(fontSize: 20.0),
     );
   }
 }

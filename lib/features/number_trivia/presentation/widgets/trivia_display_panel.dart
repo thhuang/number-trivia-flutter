@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:number_trivia/features/number_trivia/presentation/logicholders/number_trivia_states.dart';
 import 'package:provider/provider.dart';
 
 import '../logicholders/number_trivia_notifier.dart';
+import '../logicholders/number_trivia_states.dart';
+import 'state_display_panel.dart/loaded_display_panel.dart';
 
 class TriviaDisplayPanel extends StatelessWidget {
   const TriviaDisplayPanel({Key key}) : super(key: key);
@@ -10,35 +11,14 @@ class TriviaDisplayPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final numberTriviaState = Provider.of<NumberTriviaNotifier>(context).state;
-    final triviaNumber = numberTriviaState == Loaded()
-        ? Provider.of<NumberTriviaNotifier>(context)
-            .numberTrivia
-            .number
-            .toStringAsFixed(0)
-        : '';
-    final triviaText = numberTriviaState == Loaded()
-        ? Provider.of<NumberTriviaNotifier>(context).numberTrivia.text
-        : '';
+    return widgetSwitch(numberTriviaState);
+  }
 
-    return Column(
-      children: <Widget>[
-        Text(
-          triviaNumber,
-          style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),
-        ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 30.0),
-            child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(horizontal: 40.0),
-              child: Text(
-                triviaText,
-                style: TextStyle(fontSize: 20.0),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
+  Widget widgetSwitch(NumberTriviaState numberTriviaState) {
+    if (numberTriviaState == Loaded()) {
+      return LoadedDisplayPanel();
+    } else {
+      return Container();
+    }
   }
 }

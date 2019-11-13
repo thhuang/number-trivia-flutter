@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../logicholders/number_trivia_notifier.dart';
-import 'custom_button.dart';
-import 'number_input_field.dart';
-import 'search_button.dart';
+import 'buttons/custom_button.dart';
+import 'buttons/search_button.dart';
+import 'input_fields.dart/number_input_field.dart';
 
 class TriviaSearchPanel extends StatelessWidget {
   const TriviaSearchPanel({Key key}) : super(key: key);
