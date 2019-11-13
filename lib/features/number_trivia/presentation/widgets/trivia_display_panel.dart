@@ -15,6 +15,7 @@ class TriviaDisplayPanel extends StatelessWidget {
   }
 
   Widget widgetSwitch(NumberTriviaState numberTriviaState) {
+    // TODO: handle other states
     if (numberTriviaState == Loaded()) {
       return LoadedDisplayPanel();
     } else {

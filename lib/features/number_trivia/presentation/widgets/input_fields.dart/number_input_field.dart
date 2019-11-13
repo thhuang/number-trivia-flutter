@@ -9,6 +9,7 @@ class NumberInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: clear the input field after tapping search
     return TextField(
       onChanged: (value) =>
           Provider.of<ValueNotifier<String>>(context).value = value,
