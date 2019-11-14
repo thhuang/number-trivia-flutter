@@ -7,8 +7,8 @@ import 'provider_setup.dart';
 
 class NumberTriviaApp extends StatelessWidget {
   const NumberTriviaApp({Key key}) : super(key: key);
-  final int primaryColorCode = 0xFF58B2DC;
-  final int scaffoldBackgroundColor = 0xFF1D2137;
+  final int primaryColorCode = 0xFF58B2DC; // SORA
+  final int scaffoldBackgroundColor = 0xFF0F2540; // KON
 
   @override
   Widget build(BuildContext context) {
